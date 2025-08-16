@@ -8,36 +8,6 @@
     <meta name="keywords" content="Wedding Invitation Designer, Event Branding, Graphic Designer India, Logo Design, Brand Identity">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-          body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
-        .section-container { max-width: 1200px; margin: auto; padding: 0 2rem; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-title { font-size: 2.5rem; font-weight: 700; }
-        .section-subtitle { color: #aaa; margin-top: 0.5rem; }
-
-        .portfolio-grid, .testimonials-grid, .blog-grid, .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .portfolio-item, .testimonial-card, .blog-post, .service-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-        .portfolio-item:hover, .testimonial-card:hover, .blog-post:hover, .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff6b35;
-        }
-        .portfolio-image img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
-        .btn-primary { background: linear-gradient(135deg, #ff6b35, #6c5ce7); color: #fff; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; display: inline-block; margin-top: 1rem; }
-        .btn-secondary { color: #ff6b35; text-decoration: none; font-weight: 600; }
-
-        .testimonial-card { font-style: italic; }
-        .testimonial-card h4 { margin-top: 1rem; font-style: normal; color: #ff6b35; }
-        .blog-post h3 { margin-bottom: 0.5rem; }
-
         :root {
             --primary: #0a0a0a;
             --secondary: #1a1a1a;
@@ -47,385 +17,6 @@
             --text-muted: #a0a0a0;
             --glass: rgba(255, 255, 255, 0.1);
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Wedding & Events Specialty Section */
-        .specialty {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .specialty::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(108, 92, 231, 0.1) 0%, transparent 50%);
-        }
-
-        .specialty-hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .specialty-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .specialty-content h3 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .specialty-content p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        .specialty-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .specialty-stat {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .stat-num {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
-            display: block;
-        }
-
-        .stat-text {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .specialty-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 400px;
-        }
-
-        .wedding-card {
-            width: 280px;
-            height: 350px;
-            perspective: 1000px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .card-front {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #333;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-front::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        }
-
-        .card-ornament {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .card-front h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .card-details p {
-            margin: 0.5rem 0;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .card-design {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .design-line {
-            width: 40px;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        .design-heart {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .element {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 1.5rem;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .element-1 {
-            top: 20px;
-            left: 20px;
-            animation-delay: 0s;
-        }
-
-        .element-2 {
-            top: 50px;
-            right: 30px;
-            animation-delay: 1s;
-        }
-
-        .element-3 {
-            bottom: 80px;
-            left: 40px;
-            animation-delay: 2s;
-        }
-
-        .element-4 {
-            bottom: 30px;
-            right: 50px;
-            animation-delay: 3s;
-        }
-
-        .wedding-services {
-            margin-bottom: 6rem;
-        }
-
-        .wedding-services h3 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-        }
-
-        .wedding-services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .wedding-service-item {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .wedding-service-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .wedding-service-item:hover::before {
-            left: 100%;
-        }
-
-        .wedding-service-item:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-        }
-
-        .service-visual {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .wedding-service-item h4 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .wedding-service-item p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-            text-align: left;
-        }
-
-        .service-features li {
-            color: var(--text-muted);
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .wedding-process h3 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .process-step {
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .step-content h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .step-content p {
-            color: var(--text-muted);
-            line-height: 1.5;
-            font-size: 0.9rem;
-        }
-
-        .process-arrow {
-            color: var(--accent);
-            font-size: 1.5rem;
-            font-weight: bold;
         }
 
         * {
@@ -442,42 +33,14 @@
             overflow-x: hidden;
         }
 
-        /* Custom Cursor */
-        body {
-            cursor: none;
-        }
-
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            mix-blend-mode: difference;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-        }
-
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 2rem 0;
+            padding: 1rem 0;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -485,14 +48,14 @@
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 3rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -504,7 +67,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .nav-links a {
@@ -536,523 +99,7 @@
             width: 100%;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: radial-gradient(ellipse at center, rgba(108, 92, 231, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 3rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            letter-spacing: -0.04em;
-        }
-
-        .hero-content .highlight {
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-weight: 400;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-        }
-
-        .btn-secondary {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            color: var(--accent);
-            transform: translateX(5px);
-        }
-
-        .hero-visual {
-            position: relative;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .geometric-shape {
-            position: absolute;
-            border-radius: 20px;
-            background: linear-gradient(135deg, var(--glass), rgba(255, 107, 53, 0.1));
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            top: 50px;
-            left: 50px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            bottom: 100px;
-            right: 80px;
-            animation: float 6s ease-in-out infinite reverse;
-        }
-
-        .shape-3 {
-            width: 100px;
-            height: 100px;
-            top: 200px;
-            right: 200px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 0;
-            background: var(--secondary);
-            position: relative;
-        }
-
-        .section-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 3rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-
-        .about-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content strong {
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
-            background: var(--primary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            padding: 3rem 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .service-description {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 8rem 0;
-            background: var(--secondary);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .portfolio-item {
-            background: var(--primary);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-        }
-
-        .portfolio-image {
-            height: 250px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-image::after {
-            opacity: 1;
-        }
-
-        .portfolio-content {
-            padding: 2rem;
-        }
-
-        .portfolio-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .portfolio-description {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 0.3rem 0.8rem;
-            background: var(--glass);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            border-radius: 15px;
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 0;
-            background: var(--primary);
-            position: relative;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            margin-top: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            border-color: var(--accent);
-            transform: translateX(5px);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent);
-            width: 40px;
-        }
-
-        .contact-details h4 {
-            color: var(--text-light);
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-details p {
-            color: var(--text-muted);
-        }
-
-        .contact-details a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: var(--accent);
-        }
-
-        .contact-form {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 0;
-            background: var(--secondary);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 3rem;
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        /* Mobile Menu */
+        /* Mobile Menu Button */
         .mobile-menu {
             display: none;
             background: none;
@@ -1069,6 +116,7 @@
             background: var(--glass);
         }
 
+        /* Mobile Navigation */
         .mobile-nav {
             display: none;
             position: fixed;
@@ -1100,7 +148,7 @@
 
         .mobile-nav-header {
             position: absolute;
-            top: 2rem;
+            top: 1rem;
             left: 0;
             right: 0;
             display: flex;
@@ -1110,7 +158,7 @@
         }
 
         .mobile-nav-logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--accent), var(--accent-2));
             -webkit-background-clip: text;
@@ -1140,9 +188,12 @@
         }
 
         .mobile-nav-links li {
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             opacity: 0;
             transform: translateY(30px);
+        }
+
+        .mobile-nav.active .mobile-nav-links li {
             animation: fadeInUp 0.6s ease forwards;
         }
 
@@ -1151,11 +202,12 @@
         .mobile-nav-links li:nth-child(3) { animation-delay: 0.3s; }
         .mobile-nav-links li:nth-child(4) { animation-delay: 0.4s; }
         .mobile-nav-links li:nth-child(5) { animation-delay: 0.5s; }
+        .mobile-nav-links li:nth-child(6) { animation-delay: 0.6s; }
 
         .mobile-nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             display: block;
             padding: 1rem 2rem;
@@ -1195,6 +247,7 @@
         .mobile-contact p {
             color: var(--text-muted);
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .mobile-social {
@@ -1207,13 +260,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: var(--glass);
             border-radius: 50%;
             color: var(--text-light);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -1224,64 +277,744 @@
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 2rem;
-            }
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(108, 92, 231, 0.1) 0%, transparent 50%);
+            padding: 6rem 0 4rem;
+        }
 
-            .nav-links {
-                display: none;
-            }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            align-items: center;
+        }
 
-            .mobile-menu {
-                display: block;
-            }
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 0 2rem;
-                text-align: center;
-            }
+        .hero-content .highlight {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-            .specialty-hero,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
 
-            .specialty-stats {
-                grid-template-columns: 1fr;
-            }
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-            .wedding-services-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
 
-            .process-steps {
-                flex-direction: column;
-            }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
 
-            .process-arrow {
-                transform: rotate(90deg);
-            }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
 
-            .services-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-secondary {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
 
-            .section-container {
-                padding: 0 2rem;
-            }
+        .btn-secondary:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
 
-            .hero-content h1 {
-                font-size: 3rem;
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .geometric-shape {
+            position: absolute;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--glass), rgba(255, 107, 53, 0.1));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 120px;
+            height: 120px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            bottom: 40px;
+            right: 30px;
+            animation-direction: reverse;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            right: 40px;
+            animation-duration: 4s;
+        }
+
+        /* Section Styles */
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-image {
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .about-content {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content strong {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Specialty Section */
+        .specialty {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialty::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(108, 92, 231, 0.1) 0%, transparent 50%);
+        }
+
+        .specialty-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .specialty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .specialty-content h3 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .specialty-content p {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .specialty-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .specialty-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-num {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .stat-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .specialty-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 350px;
+        }
+
+        .wedding-card {
+            width: 240px;
+            height: 300px;
+            perspective: 1000px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .card-front {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        }
+
+        .card-ornament {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .card-front h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .card-details p {
+            margin: 0.3rem 0;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .card-design {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .design-line {
+            width: 30px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .design-heart {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .element-1 {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            top: 30px;
+            right: 20px;
+            animation-delay: 1s;
+        }
+
+        .element-3 {
+            bottom: 60px;
+            left: 30px;
+            animation-delay: 2s;
+        }
+
+        .element-4 {
+            bottom: 20px;
+            right: 40px;
+            animation-delay: 3s;
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 6rem 0;
+            background: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            padding: 2.5rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background: var(--secondary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: var(--primary);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            position: relative;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .portfolio-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: var(--primary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 35px;
+        }
+
+        .contact-details h4 {
+            color: var(--text-light);
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-details a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            background: var(--secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -1296,39 +1029,318 @@
             opacity: 1;
             transform: translateY(0);
         }
-    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; padding: 0; margin: 0; }
-    header { padding: 1rem 2rem; background: #111; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-    nav a { margin-left: 1rem; color: #fff; text-decoration: none; font-weight: 500; }
-    nav a:hover { color: #ff6b35; }
-    .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem 2rem; }
-    .hero-content h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; }
-    .hero-content p { margin-bottom: 2rem; color: #ccc; }
-    .btn-primary { background: linear-gradient(90deg, #ff6b35, #6c5ce7); color: #fff; padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; margin-right: 1rem; font-weight: 600; }
-    .btn-secondary { border: 2px solid #ff6b35; color: #ff6b35; padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; }
-    .btn-secondary i { margin-left: 0.5rem; }
-    .highlight { color: #ff6b35; font-weight: bold; }
-    .geometric-shape { width: 100px; height: 100px; background: linear-gradient(135deg, #6c5ce7, #ff6b35); border-radius: 12px; margin: 1rem; animation: float 6s ease-in-out infinite; }
-    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
-    .divider { border-top: 2px solid #333; margin: 3rem 0; }
-    img { width: 100%; border-radius: 12px; margin: 1rem 0; }
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav { display: none; flex-direction: column; background: #111; position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0; }
-      nav.active { display: flex; }
-      nav a { margin: 1rem; text-align: center; }
-      .menu-toggle { display: block; }
 
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .hero-content h1 { font-size: 2rem; }
-      .hero-cta a { margin-bottom: 1rem; }
-      .geometric-shape { margin: 0 auto; }
-    }
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .specialty-hero,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-visual {
+                height: 300px;
+            }
+
+            .specialty-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .section-container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 5rem 0 3rem;
+                min-height: 90vh;
+            }
+
+            .hero-grid {
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .hero-visual {
+                height: 250px;
+            }
+
+            .shape-1 {
+                width: 80px;
+                height: 80px;
+                top: 10px;
+                left: 10px;
+            }
+
+            .shape-2 {
+                width: 70px;
+                height: 70px;
+                bottom: 20px;
+                right: 15px;
+            }
+
+            .shape-3 {
+                width: 60px;
+                height: 60px;
+                top: 40%;
+                right: 20px;
+            }
+
+            .about,
+            .specialty,
+            .services,
+            .portfolio,
+            .contact {
+                padding: 4rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .about-image {
+                height: 250px;
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .specialty-hero {
+                gap: 2.5rem;
+            }
+
+            .specialty-content h3 {
+                font-size: 2rem;
+            }
+
+            .specialty-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .specialty-visual {
+                height: 280px;
+            }
+
+            .wedding-card {
+                width: 200px;
+                height: 260px;
+            }
+
+            .card-front {
+                padding: 1.2rem;
+            }
+
+            .card-front h4 {
+                font-size: 0.9rem;
+            }
+
+            .card-details p {
+                font-size: 0.8rem;
+            }
+
+            .element {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.8rem;
+            }
+
+            .mobile-nav-links a {
+                font-size: 1.3rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .mobile-social a {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container,
+            .section-container {
+                padding: 0 1rem;
+            }
+
+            .logo,
+            .mobile-nav-logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 4rem 0 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-visual {
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .about-image {
+                height: 200px;
+                font-size: 2rem;
+            }
+
+            .specialty-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .specialty-visual {
+                height: 240px;
+            }
+
+            .wedding-card {
+                width: 180px;
+                height: 230px;
+            }
+
+            .card-front {
+                padding: 1rem;
+            }
+
+            .card-ornament {
+                font-size: 1.2rem;
+            }
+
+            .card-front h4 {
+                font-size: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .element {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .service-card,
+            .contact-form {
+                padding: 1.5rem 1rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+            }
+
+            .mobile-nav-links a {
+                font-size: 1.1rem;
+                padding: 0.7rem 1rem;
+            }
+
+            .mobile-contact p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
     </style>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -1367,7 +1379,7 @@
             <div class="mobile-contact">
                 <p>Let's connect and create something amazing!</p>
                 <div class="mobile-social">
-                    <a href="mailto:raheemdesigns@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:raheemdesignstudio@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="https://wa.me/message/WCBFBMF6XKVGH1"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://instagram.com/raheemdesignstudio"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/codewithraheem/"><i class="fab fa-linkedin"></i></a>
@@ -1378,20 +1390,22 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-    <div class="hero-content fade-in">
-      <h1>Creative Director ,  Graphic Designer</h1>
-      <p>Crafting exceptional visual experiences that drive results and inspire audiences worldwide.</p>
-      <div class="hero-cta">
-        <a href="#portfolio" class="btn-primary">View Portfolio</a>
-        <a href="#contact" class="btn-secondary">Let's Talk <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="hero-visual fade-in">
-      <div class="geometric-shape shape-1"></div>
-      <div class="geometric-shape shape-2"></div>
-      <div class="geometric-shape shape-3"></div>
-    </div>
-  </section>
+        <div class="hero-grid">
+            <div class="hero-content fade-in">
+                <h1>Creative Director & <span class="highlight">Graphic Designer</span></h1>
+                <p class="hero-subtitle">Crafting exceptional visual experiences that drive results and inspire audiences worldwide.</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn-secondary">Let's Talk <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -1401,11 +1415,11 @@
                 <p class="section-subtitle">Passionate designer with expertise in creating impactful visual solutions</p>
             </div>
             
-            <div class="about-grid">
-                <div class="about-image fade-in">
+            <div class="about-grid fade-in">
+                <div class="about-image">
                     <i class="fas fa-user-tie"></i>
                 </div>
-                <div class="about-content fade-in">
+                <div class="about-content">
                     <p>Hello, I'm <strong>M.A. Raheem Siddiqui</strong>, a creative professional specializing in graphic design, brand identity, and visual storytelling. With years of experience in the industry, I help businesses establish powerful visual presences that resonate with their audiences.</p>
                     
                     <p>My approach combines strategic thinking with creative execution, ensuring every design not only looks exceptional but also serves its intended purpose effectively. I believe in the power of good design to transform businesses and create meaningful connections.</p>
@@ -1514,145 +1528,52 @@
                     </div>
                 </div>
             </div>
-
-            <div class="wedding-services fade-in">
-                <h3>Wedding & Event Services</h3>
-                <div class="wedding-services-grid">
-                    <div class="wedding-service-item">
-                        <div class="service-visual">
-                            <i class="fas fa-envelope-open-text"></i>
-                        </div>
-                        <h4>Wedding Invitations</h4>
-                        <p>Elegant save-the-dates, invitations, RSVP cards, and complete wedding stationery suites</p>
-                        <ul class="service-features">
-                            <li>Custom illustrations</li>
-                            <li>Premium printing guidance</li>
-                            <li>Digital & print versions</li>
-                        </ul>
-                    </div>
-
-                    <div class="wedding-service-item">
-                        <div class="service-visual">
-                            <i class="fas fa-birthday-cake"></i>
-                        </div>
-                        <h4>Event Materials</h4>
-                        <p>Complete party packages including banners, posters, menus, and decorative elements</p>
-                        <ul class="service-features">
-                            <li>Birthday parties</li>
-                            <li>Corporate events</li>
-                            <li>Anniversary celebrations</li>
-                        </ul>
-                    </div>
-
-                    <div class="wedding-service-item">
-                        <div class="service-visual">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <h4>Video Graphics</h4>
-                        <p>Stunning motion graphics, wedding videos, slideshow templates, and animated invitations</p>
-                        <ul class="service-features">
-                            <li>Wedding slideshow designs</li>
-                            <li>Animated invitations</li>
-                            <li>Event video templates</li>
-                        </ul>
-                    </div>
-
-                    <div class="wedding-service-item">
-                        <div class="service-visual">
-                            <i class="fas fa-share-alt-square"></i>
-                        </div>
-                        <h4>Social Media Packages</h4>
-                        <p>Wedding announcement posts, countdown stories, and engagement celebration graphics</p>
-                        <ul class="service-features">
-                            <li>Instagram story templates</li>
-                            <li>Facebook event covers</li>
-                            <li>Wedding hashtag designs</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wedding-process fade-in">
-                <h3>My Design Process</h3>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Consultation</h4>
-                            <p>We discuss your vision, theme, colors, and style preferences</p>
-                        </div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Design Concepts</h4>
-                            <p>I create 2-3 unique design concepts for your review</p>
-                        </div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Revisions</h4>
-                            <p>We refine the chosen design until it's perfect</p>
-                        </div>
-                    </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Final Delivery</h4>
-                            <p>You receive print-ready and digital files</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+        
     </section>
 
-     <!-- Services Section with CTA -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Services</h2>
                 <p class="section-subtitle">Comprehensive design solutions tailored to your unique needs</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid fade-in">
                 <div class="service-card">
                     <i class="fas fa-bezier-curve service-icon"></i>
-                    <h3>Logo Design</h3>
-                    <p>Creating memorable and distinctive logos that capture your brand's essence and leave lasting impressions.</p>
+                    <h3 class="service-title">Logo Design</h3>
+                    <p class="service-description">Creating memorable and distinctive logos that capture your brand's essence and leave lasting impressions.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-palette service-icon"></i>
-                    <h3>Brand Identity</h3>
-                    <p>Comprehensive branding packages including visual guidelines, color systems, typography, and applications.</p>
+                    <h3 class="service-title">Brand Identity</h3>
+                    <p class="service-description">Comprehensive branding packages including visual guidelines, color systems, typography, and applications.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-mobile-alt service-icon"></i>
-                    <h3>Social Media Design</h3>
-                    <p>Engaging graphics, templates, and campaigns that boost your online presence and drive engagement.</p>
+                    <h3 class="service-title">Social Media Design</h3>
+                    <p class="service-description">Engaging graphics, templates, and campaigns that boost your online presence and drive engagement.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-print service-icon"></i>
-                    <h3>Print Design</h3>
-                    <p>Professional print materials including business cards, brochures, posters, and marketing collateral.</p>
+                    <h3 class="service-title">Print Design</h3>
+                    <p class="service-description">Professional print materials including business cards, brochures, posters, and marketing collateral.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-desktop service-icon"></i>
-                    <h3>Digital Design</h3>
-                    <p>Web graphics, UI elements, digital presentations, and marketing materials optimized for online platforms.</p>
+                    <h3 class="service-title">Digital Design</h3>
+                    <p class="service-description">Web graphics, UI elements, digital presentations, and marketing materials optimized for online platforms.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-lightbulb service-icon"></i>
-                    <h3>Creative Consultation</h3>
-                    <p>Strategic creative guidance and consulting to develop your visual communication strategy.</p>
+                    <h3 class="service-title">Creative Consultation</h3>
+                    <p class="service-description">Strategic creative guidance and consulting to develop your visual communication strategy.</p>
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
             </div>
@@ -1660,69 +1581,57 @@
     </section>
 
     <!-- Portfolio Section -->
-   <section id="portfolio" class="portfolio">
-  <div class="section-container">
-    <div class="section-header">
-      <h2 class="section-title">Featured Work</h2>
-      <p class="section-subtitle">A showcase of recent projects and creative solutions</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <div class="portfolio-image"><img src="images/cafe-bloom.jpg" alt="Cafe Bloom Branding"></div>
-        <h3>Cafe Bloom Branding</h3>
-        <p>Complete brand identity for a premium coffee shop including logo, packaging, and marketing materials.</p>
-        <a href="blog/cafe-bloom.html" class="btn-secondary">View Case Study →</a>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-image"><img src="images/techstart-logo.jpg" alt="TechStart Logo"></div>
-        <h3>TechStart Logo Design</h3>
-        <p>Modern logo and visual identity system for a technology startup focusing on innovation and growth.</p>
-        <a href="blog/techstart-logo.html" class="btn-secondary">View Case Study →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
+    <section id="portfolio" class="portfolio">
         <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-subtitle">Feedback from some of my 80+ happy clients</p>
+            <div class="section-header fade-in">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A showcase of recent projects and creative solutions</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>“Raheem’s designs transformed our wedding into a magical event. Professional, creative, and reliable!”</p>
-                    <h4>- Sarah & Michael</h4>
+            <div class="portfolio-grid fade-in">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Cafe Bloom Branding</h3>
+                        <p>Complete brand identity for a premium coffee shop including logo, packaging, and marketing materials.</p>
+                        <a href="#contact" class="btn-secondary">View Case Study →</a>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>“Our brand identity is now unforgettable thanks to his creative direction. Highly recommend!”</p>
-                    <h4>- TechStart CEO</h4>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>TechStart Logo Design</h3>
+                        <p>Modern logo and visual identity system for a technology startup focusing on innovation and growth.</p>
+                        <a href="#contact" class="btn-secondary">View Case Study →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Wedding Collection</h3>
+                        <p>Elegant wedding invitation suites with custom illustrations, calligraphy, and premium finishing touches.</p>
+                        <a href="#contact" class="btn-secondary">View Collection →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Event Branding Package</h3>
+                        <p>Complete event branding including signage, programs, digital assets, and promotional materials.</p>
+                        <a href="#contact" class="btn-secondary">View Project →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-   
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">Design Insights</h2>
-                <p class="section-subtitle">Tips & stories from my creative journey</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-post">
-                    <h3>5 Wedding Invitation Trends in 2025</h3>
-                    <p>From minimal elegance to digital invites with animations, discover the top invitation styles this year.</p>
-                    <a href="blog/wedding-trends.html" class="btn-secondary">Read More →</a>
-                </div>
-                <div class="blog-post">
-                    <h3>Brand Identity Essentials</h3>
-                    <p>Learn the key components of a strong and memorable brand identity.</p>
-                    <a href="blog/brand-identity.html" class="btn-secondary">Read More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="section-container">
@@ -1731,8 +1640,8 @@
                 <p class="section-subtitle">Ready to bring your vision to life? Let's discuss your next project</p>
             </div>
 
-            <div class="contact-grid">
-                <div class="contact-info fade-in">
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
                     <h3>Get In Touch</h3>
                     
                     <div class="contact-item">
@@ -1776,7 +1685,7 @@
                     </div>
                 </div>
 
-                <div class="contact-form fade-in">
+                <div class="contact-form">
                     <form>
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -1788,7 +1697,7 @@
                         </div>
                         <div class="form-group">
                             <label for="project">Project Type</label>
-                            <select id="project" name="project" style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--text-light); font-family: inherit;">
+                            <select id="project" name="project">
                                 <option value="">Select a service</option>
                                 <option value="wedding">Wedding Design</option>
                                 <option value="event">Event Materials</option>
@@ -1803,7 +1712,7 @@
                         </div>
                         <div class="form-group">
                             <label for="budget">Budget Range</label>
-                            <select id="budget" name="budget" style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--text-light); font-family: inherit;">
+                            <select id="budget" name="budget">
                                 <option value="">Select budget range</option>
                                 <option value="500-1000">$500 - $1,000</option>
                                 <option value="1000-2500">$1,000 - $2,500</option>
@@ -1858,52 +1767,6 @@
             }
         });
 
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
-        
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
-
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            
-            cursorFollower.style.left = (followerX - 20) + 'px';
-            cursorFollower.style.top = (followerY - 20) + 'px';
-            
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        // Cursor hover effects
-        const hoverElements = document.querySelectorAll('a, button, .service-card, .portfolio-item');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursorFollower.style.transform = 'scale(1.5)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursorFollower.style.transform = 'scale(1)';
-            });
-        });
-
-        // Hide cursor on mobile
-        if (window.innerWidth <= 768) {
-            cursor.style.display = 'none';
-            cursorFollower.style.display = 'none';
-            document.body.style.cursor = 'auto';
-        }
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1936,63 +1799,30 @@
             observer.observe(el);
         });
 
-        // Parallax effect for hero shapes
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const shapes = document.querySelectorAll('.geometric-shape');
-            
-            shapes.forEach((shape, index) => {
-                const speed = 0.5 + (index * 0.2);
-                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
-
         // Form submission
         const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            const submitBtn = form.querySelector('.btn-primary');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('.btn-primary');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.style.pointerEvents = 'none';
                 
                 setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = 'linear-gradient(135deg, var(--accent), var(--accent-2))';
-                    submitBtn.style.pointerEvents = 'auto';
-                    form.reset();
-                }, 2000);
-            }, 2000);
-        });
-
-        // Dynamic typing effect for hero text (optional enhancement)
-        const heroTitle = document.querySelector('.hero-content h1');
-        if (heroTitle) {
-            const text = heroTitle.innerHTML;
-            heroTitle.innerHTML = '';
-            let i = 0;
-            
-            function typeWriter() {
-                if (i < text.length) {
-                    heroTitle.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 50);
-                }
-            }
-            
-            // Start typing after page loads
-            setTimeout(typeWriter, 1000);
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = 'linear-gradient(135deg, var(--accent), var(--accent-2))';
+                        submitBtn.style.pointerEvents = 'auto';
+                        form.reset();
+                    }, 2000);
+                }, 1500);
+            });
         }
 
         // Counter animation for stats
@@ -2030,6 +1860,62 @@
             });
             statsObserver.observe(statsSection);
         }
+
+        // Parallax effect for hero shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.geometric-shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.2);
+                if (shape) {
+                    shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+                }
+            });
+        });
+
+        // Mobile menu close on link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Prevent scroll when mobile menu is open
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav) {
+            mobileNav.addEventListener('click', (e) => {
+                if (e.target === mobileNav) {
+                    closeMobileMenu();
+                }
+            });
+        }
+
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            // Add visible class to elements in viewport on load
+            document.querySelectorAll('.fade-in').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+
+        // Smooth scroll offset for fixed navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
