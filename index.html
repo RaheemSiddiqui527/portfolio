@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.A. Raheem Siddiqui | Creative Director & Graphic Designer</title>
+    <meta name="description" content="Wedding & Event Invitation Designer, Logo Design, Brand Identity, Social Media Graphics by M.A. Raheem Siddiqui.">
+    <meta name="keywords" content="Wedding Invitation Designer, Event Branding, Graphic Designer India, Logo Design, Brand Identity">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+          body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+        .section-container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-title { font-size: 2.5rem; font-weight: 700; }
+        .section-subtitle { color: #aaa; margin-top: 0.5rem; }
+
+        .portfolio-grid, .testimonials-grid, .blog-grid, .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-item, .testimonial-card, .blog-post, .service-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover, .testimonial-card:hover, .blog-post:hover, .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+        .portfolio-image img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
+        .btn-primary { background: linear-gradient(135deg, #ff6b35, #6c5ce7); color: #fff; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; display: inline-block; margin-top: 1rem; }
+        .btn-secondary { color: #ff6b35; text-decoration: none; font-weight: 600; }
+
+        .testimonial-card { font-style: italic; }
+        .testimonial-card h4 { margin-top: 1rem; font-style: normal; color: #ff6b35; }
+        .blog-post h3 { margin-bottom: 0.5rem; }
+
         :root {
             --primary: #0a0a0a;
             --secondary: #1a1a1a;
@@ -1264,6 +1296,33 @@
             opacity: 1;
             transform: translateY(0);
         }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; padding: 0; margin: 0; }
+    header { padding: 1rem 2rem; background: #111; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    nav a { margin-left: 1rem; color: #fff; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #ff6b35; }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem 2rem; }
+    .hero-content h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-content p { margin-bottom: 2rem; color: #ccc; }
+    .btn-primary { background: linear-gradient(90deg, #ff6b35, #6c5ce7); color: #fff; padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; margin-right: 1rem; font-weight: 600; }
+    .btn-secondary { border: 2px solid #ff6b35; color: #ff6b35; padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; }
+    .btn-secondary i { margin-left: 0.5rem; }
+    .highlight { color: #ff6b35; font-weight: bold; }
+    .geometric-shape { width: 100px; height: 100px; background: linear-gradient(135deg, #6c5ce7, #ff6b35); border-radius: 12px; margin: 1rem; animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+    .divider { border-top: 2px solid #333; margin: 3rem 0; }
+    img { width: 100%; border-radius: 12px; margin: 1rem 0; }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav { display: none; flex-direction: column; background: #111; position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0; }
+      nav.active { display: flex; }
+      nav a { margin: 1rem; text-align: center; }
+      .menu-toggle { display: block; }
+
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-cta a { margin-bottom: 1rem; }
+      .geometric-shape { margin: 0 auto; }
+    }
     </style>
 </head>
 <body>
@@ -1319,24 +1378,20 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-grid">
-            <div class="hero-content fade-in">
-                <h1>Creative <span class="highlight">Director</span> & Graphic <span class="highlight">Designer</span></h1>
-                <p class="hero-subtitle">Crafting exceptional visual experiences that drive results and inspire audiences worldwide.</p>
-                <div class="hero-cta">
-                    <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                    <a href="#contact" class="btn-secondary">
-                        Let's Talk <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual fade-in">
-                <div class="geometric-shape shape-1"></div>
-                <div class="geometric-shape shape-2"></div>
-                <div class="geometric-shape shape-3"></div>
-            </div>
-        </div>
-    </section>
+    <div class="hero-content fade-in">
+      <h1>Creative Director ,  Graphic Designer</h1>
+      <p>Crafting exceptional visual experiences that drive results and inspire audiences worldwide.</p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn-secondary">Let's Talk <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <div class="geometric-shape shape-1"></div>
+      <div class="geometric-shape shape-2"></div>
+      <div class="geometric-shape shape-3"></div>
+    </div>
+  </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -1556,168 +1611,118 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+     <!-- Services Section with CTA -->
     <section id="services" class="services">
         <div class="section-container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <h2 class="section-title">Services</h2>
                 <p class="section-subtitle">Comprehensive design solutions tailored to your unique needs</p>
             </div>
-
             <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-bezier-curve"></i>
-                    </div>
-                    <h3 class="service-title">Logo Design</h3>
-                    <p class="service-description">Creating memorable and distinctive logos that capture your brand's essence and leave lasting impressions on your audience.</p>
+                <div class="service-card">
+                    <i class="fas fa-bezier-curve service-icon"></i>
+                    <h3>Logo Design</h3>
+                    <p>Creating memorable and distinctive logos that capture your brand's essence and leave lasting impressions.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="service-title">Brand Identity</h3>
-                    <p class="service-description">Comprehensive branding packages including visual guidelines, color systems, typography, and brand applications.</p>
+                <div class="service-card">
+                    <i class="fas fa-palette service-icon"></i>
+                    <h3>Brand Identity</h3>
+                    <p>Comprehensive branding packages including visual guidelines, color systems, typography, and applications.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="service-title">Social Media Design</h3>
-                    <p class="service-description">Engaging social media graphics, templates, and campaigns that boost your online presence and drive engagement.</p>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <h3>Social Media Design</h3>
+                    <p>Engaging graphics, templates, and campaigns that boost your online presence and drive engagement.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h3 class="service-title">Print Design</h3>
-                    <p class="service-description">Professional print materials including business cards, brochures, posters, and marketing collateral.</p>
+                <div class="service-card">
+                    <i class="fas fa-print service-icon"></i>
+                    <h3>Print Design</h3>
+                    <p>Professional print materials including business cards, brochures, posters, and marketing collateral.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3 class="service-title">Digital Design</h3>
-                    <p class="service-description">Web graphics, UI elements, digital presentations, and online marketing materials optimized for digital platforms.</p>
+                <div class="service-card">
+                    <i class="fas fa-desktop service-icon"></i>
+                    <h3>Digital Design</h3>
+                    <p>Web graphics, UI elements, digital presentations, and marketing materials optimized for online platforms.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="service-title">Creative Consultation</h3>
-                    <p class="service-description">Strategic creative guidance and consulting to help develop your visual communication strategy and brand direction.</p>
+                <div class="service-card">
+                    <i class="fas fa-lightbulb service-icon"></i>
+                    <h3>Creative Consultation</h3>
+                    <p>Strategic creative guidance and consulting to develop your visual communication strategy.</p>
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+   <section id="portfolio" class="portfolio">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-subtitle">A showcase of recent projects and creative solutions</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-image"><img src="images/cafe-bloom.jpg" alt="Cafe Bloom Branding"></div>
+        <h3>Cafe Bloom Branding</h3>
+        <p>Complete brand identity for a premium coffee shop including logo, packaging, and marketing materials.</p>
+        <a href="blog/cafe-bloom.html" class="btn-secondary">View Case Study →</a>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-image"><img src="images/techstart-logo.jpg" alt="TechStart Logo"></div>
+        <h3>TechStart Logo Design</h3>
+        <p>Modern logo and visual identity system for a technology startup focusing on innovation and growth.</p>
+        <a href="blog/techstart-logo.html" class="btn-secondary">View Case Study →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
         <div class="section-container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">A showcase of recent projects and creative solutions</p>
+            <div class="section-header">
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">Feedback from some of my 80+ happy clients</p>
             </div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Cafe Bloom Branding</h3>
-                        <p class="portfolio-description">Complete brand identity for a premium coffee shop including logo, packaging, and marketing materials.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Branding</span>
-                            <span class="tag">Logo Design</span>
-                            <span class="tag">Packaging</span>
-                        </div>
-                    </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“Raheem’s designs transformed our wedding into a magical event. Professional, creative, and reliable!”</p>
+                    <h4>- Sarah & Michael</h4>
                 </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">TechStart Logo Design</h3>
-                        <p class="portfolio-description">Modern logo and visual identity system for a technology startup focusing on innovation and growth.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Logo Design</span>
-                            <span class="tag">Tech</span>
-                            <span class="tag">Startup</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Music Festival Campaign</h3>
-                        <p class="portfolio-description">Creative poster series and social media campaign for an annual music festival event.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Poster Design</span>
-                            <span class="tag">Social Media</span>
-                            <span class="tag">Event</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">E-commerce Branding</h3>
-                        <p class="portfolio-description">Complete brand overhaul for an online fashion retailer including logo, website graphics, and packaging.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Fashion</span>
-                            <span class="tag">Digital</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Restaurant Menu Design</h3>
-                        <p class="portfolio-description">Elegant menu design with custom illustrations for a fine dining establishment.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Print Design</span>
-                            <span class="tag">Illustration</span>
-                            <span class="tag">Restaurant</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Corporate Identity</h3>
-                        <p class="portfolio-description">Professional corporate identity package for a consulting firm including stationery and presentations.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Corporate</span>
-                            <span class="tag">Business</span>
-                            <span class="tag">Professional</span>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <p>“Our brand identity is now unforgettable thanks to his creative direction. Highly recommend!”</p>
+                    <h4>- TechStart CEO</h4>
                 </div>
             </div>
         </div>
     </section>
 
+   
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Design Insights</h2>
+                <p class="section-subtitle">Tips & stories from my creative journey</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <h3>5 Wedding Invitation Trends in 2025</h3>
+                    <p>From minimal elegance to digital invites with animations, discover the top invitation styles this year.</p>
+                    <a href="blog/wedding-trends.html" class="btn-secondary">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <h3>Brand Identity Essentials</h3>
+                    <p>Learn the key components of a strong and memorable brand identity.</p>
+                    <a href="blog/brand-identity.html" class="btn-secondary">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="section-container">
