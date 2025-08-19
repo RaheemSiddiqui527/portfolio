@@ -1338,6 +1338,523 @@
         .mt-1 { margin-top: 0.5rem; }
         .mt-2 { margin-top: 1rem; }
         .mt-3 { margin-top: 1.5rem; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        .portfolio {
+            padding: 80px 0;
+            background-color: #0a0a0a;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff6b9d, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Gradient backgrounds for each project */
+        .portfolio-item:nth-child(1) .portfolio-image {
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff6b9d, #a855f7);
+        }
+
+        .portfolio-item:nth-child(2) .portfolio-image {
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff6b9d, #a855f7);
+        }
+
+        .portfolio-item:nth-child(3) .portfolio-image {
+            background: linear-gradient(135deg, #ff1744, #e91e63, #9c27b0, #673ab7);
+        }
+
+        .portfolio-item:nth-child(4) .portfolio-image {
+            background: linear-gradient(135deg, #00bcd4, #2196f3, #3f51b5, #9c27b0);
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .portfolio-image i {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            z-index: 2;
+            position: relative;
+        }
+
+        .portfolio-content {
+            padding: 30px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .portfolio-content p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary:hover {
+            background: #ff6b35;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .portfolio-content {
+                padding: 25px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 2% auto;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid #333;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .modal-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff1744, #e91e63, #9c27b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .close {
+            color: #888;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #fff;
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .collection-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            background: #222;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: #ff1744;
+        }
+
+        .gallery-image {
+            height: 120px;
+            background: linear-gradient(135deg, #ff1744, #e91e63, #9c27b0, #673ab7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-image i {
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .gallery-item h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .gallery-item p {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ff1744, #e91e63);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 23, 68, 0.4);
+        }
+
+        .modal-close {
+            background: transparent;
+            border: 2px solid #666;
+            color: #666;
+        }
+
+        .modal-close:hover {
+            background: #666;
+            color: #fff;
+        }
+
+        /* Modal Responsive */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 5% auto;
+                width: 95%;
+            }
+            
+            .modal-header {
+                padding: 20px 25px 15px;
+            }
+            
+            .modal-header h2 {
+                font-size: 2rem;
+            }
+            
+            .modal-body {
+                padding: 25px;
+            }
+            
+            .collection-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+        }
+
+        /* Event Branding Gradient */
+        .event-gradient {
+            background: linear-gradient(135deg, #00bcd4, #2196f3, #3f51b5, #9c27b0) !important;
+        }
+
+        /* Cafe Bloom Gradient */
+        .cafe-gradient {
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff6b9d, #a855f7) !important;
+        }
+
+        /* TechStart Gradient */
+        .techstart-gradient {
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff6b9d, #a855f7) !important;
+        }
+
+        /* Project Overview */
+        .project-overview {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #222;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .project-description {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Quote Form Styles */
+        .quote-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-intro {
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .quote-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            background: #222;
+            border: 2px solid #333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Success Modal Styles */
+        .success-content .modal-header h2 {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .success-message h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .success-message p {
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .next-steps {
+            text-align: left;
+            max-width: 400px;
+            margin: 20px auto;
+            color: #ccc;
+        }
+
+        .next-steps li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .contact-info a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Responsive */
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1580,13 +2097,87 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="section-container">
             <div class="section-header fade-in">
                 <h2 class="section-title">Featured Work</h2>
                 <p class="section-subtitle">A showcase of recent projects and creative solutions</p>
             </div>
+
+    <!-- Event Branding Package Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Event Branding Package</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="collection-gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Brand Identity Design</h4>
+                        <p>Complete visual identity including logo, colors, and typography guidelines</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-sign"></i>
+                        </div>
+                        <h4>Event Signage</h4>
+                        <p>Large format banners, directional signs, and entrance displays</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h4>Programs & Brochures</h4>
+                        <p>Event programs, information brochures, and agenda booklets</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Digital Assets</h4>
+                        <p>Social media graphics, email templates, and digital presentations</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-id-badge"></i>
+                        </div>
+                        <h4>Name Badges & Lanyards</h4>
+                        <p>Custom name badges, lanyards, and attendee identification materials</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-gift-box"></i>
+                        </div>
+                        <h4>Promotional Materials</h4>
+                        <p>Branded merchandise, giveaways, and promotional items</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Catering Materials</h4>
+                        <p>Menu cards, table tents, buffet labels, and food station signage</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image event-gradient">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h4>Tickets & Passes</h4>
+                        <p>Event tickets, VIP passes, and access control materials</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="btn-primary">Request Quote</a>
+                    <button class="btn-secondary modal-close">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
             <div class="portfolio-grid fade-in">
                 <div class="portfolio-item">
                     <div class="portfolio-image">
@@ -1595,7 +2186,7 @@
                     <div class="portfolio-content">
                         <h3>Cafe Bloom Branding</h3>
                         <p>Complete brand identity for a premium coffee shop including logo, packaging, and marketing materials.</p>
-                        <a href="blog/cafe-bloom.html" class="btn-secondary">View Case Study →</a>
+                        <a href="#" class="btn-secondary cafe-bloom-btn">View Case Study →</a>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -1605,7 +2196,7 @@
                     <div class="portfolio-content">
                         <h3>TechStart Logo Design</h3>
                         <p>Modern logo and visual identity system for a technology startup focusing on innovation and growth.</p>
-                        <a href="blog/techstart-logo.html" class="btn-secondary">View Case Study →</a>
+                        <a href="#" class="btn-secondary techstart-btn">View Case Study →</a>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -1615,7 +2206,7 @@
                     <div class="portfolio-content">
                         <h3>Wedding Collection</h3>
                         <p>Elegant wedding invitation suites with custom illustrations, calligraphy, and premium finishing touches.</p>
-                        <a href="#contact" class="btn-secondary">View Collection →</a>
+                        <a href="#" class="btn-secondary wedding-collection-btn">View Collection →</a>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -1625,13 +2216,314 @@
                     <div class="portfolio-content">
                         <h3>Event Branding Package</h3>
                         <p>Complete event branding including signage, programs, digital assets, and promotional materials.</p>
-                        <a href="#contact" class="btn-secondary">View Project →</a>
+                        <a href="#" class="btn-secondary event-branding-btn">View Project →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Cafe Bloom Branding Modal -->
+    <div id="cafe-bloom-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cafe Bloom Branding</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-overview">
+                    <p class="project-description">A complete brand identity project for Cafe Bloom, a premium coffee shop focusing on artisanal coffee experience and cozy atmosphere. The project involved creating a cohesive visual identity that reflects warmth, quality, and community.</p>
+                </div>
+                <div class="collection-gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h4>Logo Design</h4>
+                        <p>Primary and secondary logo variations with coffee-inspired elements</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Color Palette</h4>
+                        <p>Warm earth tones and coffee-inspired color scheme</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <h4>Typography</h4>
+                        <p>Custom font pairing for headers and body text</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h4>Packaging Design</h4>
+                        <p>Coffee bags, cups, and takeaway packaging materials</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h4>Business Cards</h4>
+                        <p>Premium business cards with embossed logo and texture</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image cafe-gradient">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h4>Storefront Design</h4>
+                        <p>Signage, window graphics, and interior branding elements</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="btn-primary">Start Your Project</a>
+                    <button class="btn-secondary modal-close">Close Case Study</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TechStart Logo Modal -->
+    <div id="techstart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>TechStart Logo Design</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-overview">
+                    <p class="project-description">Modern logo and comprehensive visual identity system for TechStart, an innovative technology startup. The design emphasizes growth, innovation, and forward-thinking approach with clean, contemporary aesthetics.</p>
+                </div>
+                <div class="collection-gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Logo Concept</h4>
+                        <p>Dynamic logo symbolizing growth and technological innovation</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <h4>Logo Variations</h4>
+                        <p>Horizontal, stacked, and icon-only versions for different uses</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-swatchbook"></i>
+                        </div>
+                        <h4>Brand Colors</h4>
+                        <p>Modern color palette with gradients and tech-inspired hues</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Stationery Design</h4>
+                        <p>Business cards, letterhead, and corporate stationery</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h4>Digital Applications</h4>
+                        <p>Website headers, social media profiles, and digital presentations</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image techstart-gradient">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Brand Guidelines</h4>
+                        <p>Comprehensive brand manual with usage guidelines and specifications</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="btn-primary">Get Logo Design</a>
+                    <button class="btn-secondary modal-close">Close Case Study</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wedding-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Wedding Collection</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="collection-gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Elegant Invitations</h4>
+                        <p>Custom wedding invitations with premium paper and foil accents</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-rings-wedding"></i>
+                        </div>
+                        <h4>Save the Date</h4>
+                        <p>Beautiful save the date cards with personalized designs</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4>Thank You Cards</h4>
+                        <p>Matching thank you cards with elegant typography</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-calendar-heart"></i>
+                        </div>
+                        <h4>RSVP Cards</h4>
+                        <p>Coordinated RSVP cards with return envelopes</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-flower"></i>
+                        </div>
+                        <h4>Menu Cards</h4>
+                        <p>Elegant menu cards for wedding reception</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h4>Programs</h4>
+                        <p>Wedding ceremony programs with custom illustrations</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="btn-primary">Get Custom Quote</a>
+                    <button class="btn-secondary modal-close">Close Gallery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Quote Request Modal -->
+    <div id="quote-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Request a Quote</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="quote-form-container">
+                    <p class="form-intro">Tell us about your project and we'll provide you with a detailed quote within 24 hours.</p>
+                    
+                    <form id="quote-form" class="quote-form">
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="projectType" required>
+                                <option value="">Select Project Type</option>
+                                <option value="cafe-branding">Cafe/Restaurant Branding</option>
+                                <option value="logo-design">Logo Design</option>
+                                <option value="wedding-collection">Wedding Collection</option>
+                                <option value="event-branding">Event Branding Package</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-name">Your Name *</label>
+                                <input type="text" id="client-name" name="clientName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-email">Email Address *</label>
+                                <input type="email" id="client-email" name="clientEmail" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-phone">Phone Number</label>
+                                <input type="tel" id="client-phone" name="clientPhone">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget-range">Budget Range</label>
+                                <select id="budget-range" name="budgetRange">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="500-1000">₹500 - ₹1,000</option>
+                                    <option value="1000-5000">₹1,000 - ₹5,000</option>
+                                    <option value="5000-10000">₹5,000 - ₹10,000</option>
+                                    <option value="10000+">₹10,000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-timeline">Project Timeline</label>
+                            <select id="project-timeline" name="projectTimeline">
+                                <option value="">Select Timeline</option>
+                                <option value="asap">ASAP (Rush Job)</option>
+                                <option value="1-week">Within 1 Week</option>
+                                <option value="2-weeks">Within 2 Weeks</option>
+                                <option value="1-month">Within 1 Month</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-details">Project Details *</label>
+                            <textarea id="project-details" name="projectDetails" rows="5" placeholder="Please describe your project requirements, vision, and any specific details..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inspiration">Inspiration/References</label>
+                            <textarea id="inspiration" name="inspiration" rows="3" placeholder="Any websites, designs, or references you'd like to share..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Send Quote Request</button>
+                            <button type="button" class="btn-secondary modal-close">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-content">
+            <div class="modal-header">
+                <h2>✨ Quote Request Sent!</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You for Your Request!</h3>
+                    <p>We've received your quote request and will get back to you within 24 hours with a detailed proposal.</p>
+                    <p><strong>What happens next?</strong></p>
+                    <ul class="next-steps">
+                        <li>We'll review your project requirements</li>
+                        <li>Prepare a detailed quote with timeline</li>
+                        <li>Send it to your email address</li>
+                        <li>Schedule a call to discuss further</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><strong>Need immediate assistance?</strong><br>
+                        Call us at: <a href="tel:+919999999999">+91 99999 99999</a><br>
+                        Email: <a href="mailto:hello@yourdesign.com">hello@yourdesign.com</a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary modal-close">Continue Browsing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="section-container">
@@ -1916,6 +2808,122 @@
                 }
             });
         });
+        
+        // Modal functionality
+        // (This block is removed to fix the redeclaration error. The complete modal logic is implemented in the next block below.)
+        // Modal functionality
+        const modals = {
+            cafeBloom: document.getElementById('cafe-bloom-modal'),
+            techstart: document.getElementById('techstart-modal'),
+            wedding: document.getElementById('wedding-modal'),
+            event: document.getElementById('event-modal'),
+            quote: document.getElementById('quote-modal'),
+            success: document.getElementById('success-modal')
+        };
+
+        const buttons = {
+            cafeBloom: document.querySelector('.cafe-bloom-btn'),
+            techstart: document.querySelector('.techstart-btn'),
+            wedding: document.querySelector('.wedding-collection-btn'),
+            event: document.querySelector('.event-branding-btn')
+        };
+
+        const closeBtns = document.querySelectorAll('.close, .modal-close');
+        const quoteBtns = document.querySelectorAll('.quote-btn');
+
+        // Open portfolio modals
+        buttons.cafeBloom.addEventListener('click', function(e) {
+            e.preventDefault();
+            modals.cafeBloom.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        buttons.techstart.addEventListener('click', function(e) {
+            e.preventDefault();
+            modals.techstart.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        buttons.wedding.addEventListener('click', function(e) {
+            e.preventDefault();
+            modals.wedding.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        buttons.event.addEventListener('click', function(e) {
+            e.preventDefault();
+            modals.event.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Open quote modal
+        quoteBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectType = this.getAttribute('data-project');
+                
+                // Pre-fill project type in form
+                const projectSelect = document.getElementById('project-type');
+                projectSelect.value = projectType;
+                
+                // Close any open modal first
+                Object.values(modals).forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                
+                // Open quote modal
+                modals.quote.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Handle quote form submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to your server
+            // For demo purposes, we'll just show success message
+            
+            // Close quote modal and show success
+            modals.quote.style.display = 'none';
+            modals.success.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Close all modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                Object.values(modals).forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            Object.values(modals).forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                Object.values(modals).forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    
     </script>
 </body>
 </html>
