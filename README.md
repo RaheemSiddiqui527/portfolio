@@ -35,7 +35,7 @@ portfolio-website/
 ### Option 1: Local Development
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/RaheemSiddiqui527/portfolio.git
    cd portfolio-website
    ```
 
@@ -199,7 +199,7 @@ If hosting on Netlify, simply add `netlify` attribute:
 ### Local Development
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/portfolio-website.git
+git clone https://github.com/RaheemSiddiqui527/portfolio.git
 
 # Navigate to directory
 cd portfolio-website
@@ -256,10 +256,10 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 Author
 
 **M.A. Raheem Siddiqui**
-- Portfolio: [Your Website URL]
-- Email: your.email@example.com
-- Instagram: [@your_handle](https://instagram.com/your_handle)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
+- Portfolio: https://raheemdesigns.vercel.app/
+- Email: raheemdesignstudio@gmail.com
+- Instagram: [@raheemdesignstudio](https://instagram.com/@raheemdesignstudio)
+- LinkedIn: [M.A. Raheem Siddiqui](https://linkedin.com/in/M.A. Raheem Siddiqui)
 
 ## 🙏 Acknowledgments
 

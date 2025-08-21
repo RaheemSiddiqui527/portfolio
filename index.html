@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.A. Raheem Siddiqui | Creative Director & Graphic Designer</title>
-    <meta name="description" content="Wedding & Event Invitation Designer, Logo Design, Brand Identity, Social Media Graphics by M.A. Raheem Siddiqui.">
-    <meta name="keywords" content="Wedding Invitation Designer, Event Branding, Graphic Designer India, Logo Design, Brand Identity">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Title -->
+  <title>Wedding Invitation Designer | Creative Branding & Graphic Design by M.A. Raheem Siddiqui</title>
+
+  <!-- Meta Description -->
+  <meta name="description" content="Professional Wedding Invitation Designer & Creative Director. M.A. Raheem Siddiqui creates custom wedding invitations, brand identity, logos, and event branding that inspire and captivate. Get tailored designs for weddings, businesses, and events.">
+
+  <!-- Keywords (not used by Google, still useful for others) -->
+  <meta name="keywords" content="Wedding Invitation Designer, Event Branding, Logo Design India, Graphic Designer Mumbai, Creative Director, Brand Identity, Custom Invitations, Social Media Graphics">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://raheemdesigns.vercel.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="M.A. Raheem Siddiqui | Wedding Invitation & Graphic Designer">
+  <meta property="og:description" content="Custom wedding invitations, logos, and brand identity design by Raheem Siddiqui. Creative work that inspires.">
+  <meta property="og:image" content="https://raheemdesigns.vercel.app/images/og-preview.jpg">
+  <meta property="og:url" content="https://raheemdesigns.vercel.app/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wedding Invitation & Graphic Designer | Raheem Siddiqui">
+  <meta name="twitter:description" content="Creative wedding invitations, branding, and social media graphics tailored for you.">
+  <meta name="twitter:image" content="https://raheemdesigns.vercel.app/images/og-preview.jpg">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Raheem Design Studio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://raheemdesigns.vercel.app/favicon.ico" type="image/x-icon">
+
+  <!-- Schema Markup (Person + Business) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "M.A. Raheem Siddiqui",
+    "jobTitle": "Creative Director & Graphic Designer",
+    "url": "https://raheemdesigns.vercel.app/",
+    "sameAs": [
+      "https://instagram.com/raheemdesignstudio",
+      "https://www.linkedin.com/in/codewithraheem/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Raheem Design Studio"
+    },
+    "knowsAbout": [
+      "Wedding Invitation Design",
+      "Event Branding",
+      "Logo Design",
+      "Brand Identity",
+      "Social Media Graphics",
+      "Print Design"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Raheem Design Studio",
+    "url": "https://raheemdesigns.vercel.app/",
+    "logo": "https://raheemdesigns.vercel.app/favicon.ico",
+    "sameAs": [
+      "https://instagram.com/raheemdesignstudio",
+      "https://www.linkedin.com/in/codewithraheem/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://raheemdesigns.vercel.app/",
+    "name": "M.A. Raheem Siddiqui — Creative Director & Graphic Designer",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.google.com/search?q=site:raheemdesigns.vercel.app+{search_term}",
+      "query-input": "required name=search_term"
+    }
+  }
+  </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -1855,6 +1937,28 @@
                 flex-direction: column;
             }
         }
+    /* Fix: Ensure dropdown options are visible in dark theme */
+        .quote-form select,
+        .form-group select {
+            color: #fff;
+            background-color: #222;
+            color-scheme: dark;
+        }
+        .form-group select option,
+        .quote-form select option {
+            color: #fff;
+            background-color: #1a1a1a;
+        }
+        .form-group select option:checked,
+        .quote-form select option:checked {
+            background-color: #333;
+            color: #fff;
+        }
+        .form-group select optgroup,
+        .quote-form select optgroup {
+            color: #fff;
+            background-color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
@@ -2172,7 +2276,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#contact" class="btn-primary">Request Quote</a>
+                    <a href="#" class="btn-primary quote-btn">Request Quote</a>
                     <button class="btn-secondary modal-close">Close Project</button>
                 </div>
             </div>
@@ -2279,7 +2383,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#contact" class="btn-primary">Start Your Project</a>
+                    <a href="#" class="btn-primary quote-btn">Start Your Project</a>
                     <button class="btn-secondary modal-close">Close Case Study</button>
                 </div>
             </div>
@@ -2342,7 +2446,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#contact" class="btn-primary">Get Logo Design</a>
+                    <a href="#" class="btn-primary quote-btn">Get Logo Design</a>
                     <button class="btn-secondary modal-close">Close Case Study</button>
                 </div>
             </div>
@@ -2400,7 +2504,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#contact" class="btn-primary">Get Custom Quote</a>
+                    <a href="#" class="btn-primary quote-btn">Get Custom Quote</a>
                     <button class="btn-secondary modal-close">Close Gallery</button>
                 </div>
             </div>
