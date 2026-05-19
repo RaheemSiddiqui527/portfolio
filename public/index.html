@@ -1022,50 +1022,204 @@
         }
 
         .contact-form {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .contact-form:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-form::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-form form {
+            position: relative;
+            z-index: 1;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
+            position: relative;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             color: var(--text-light);
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-wrapper .input-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .input-wrapper .textarea-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 1.1rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.9rem;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1rem 1rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             color: var(--text-light);
             font-family: inherit;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        /* Focus styles */
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Focus within the wrapper triggers icon color transition */
+        .input-wrapper:focus-within .input-icon {
+            color: var(--accent-2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .input-wrapper:focus-within .textarea-icon {
+            color: var(--accent-2);
+            transform: scale(1.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
+        }
+
+        /* Customize select arrow */
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2724%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23a0a0a0%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpolyline%20points%3D%276%209%2012%2015%2018%209%27%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.1rem center;
+            background-size: 1.1rem;
+            padding-right: 3rem;
+        }
+
+        .form-group select:focus {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2724%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%236c5ce7%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpolyline%20points%3D%276%209%2012%2015%2018%209%27%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+        }
+
+        .btn-submit-container {
+            position: relative;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        .btn-contact-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn-contact-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.75s ease;
+        }
+
+        .btn-contact-submit:hover::before {
+            left: 150%;
+        }
+
+        .btn-contact-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4), 0 5px 15px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+        }
+
+        .btn-contact-submit:active {
+            transform: translateY(-1px);
         }
 
         /* Footer */
@@ -1293,7 +1447,7 @@
             .form-group input,
             .form-group textarea,
             .form-group select {
-                padding: 0.8rem;
+                padding: 0.8rem 0.8rem 0.8rem 2.8rem;
             }
 
             .mobile-nav-links a {
@@ -2686,47 +2840,64 @@
                 </div>
 
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="project">Project Type</label>
-                            <select id="project" name="project">
-                                <option value="">Select a service</option>
-                                <option value="wedding">Wedding Design</option>
-                                <option value="event">Event Materials</option>
-                                <option value="video">Video Graphics</option>
-                                <option value="logo">Logo Design</option>
-                                <option value="branding">Brand Identity</option>
-                                <option value="social">Social Media Design</option>
-                                <option value="print">Print Design</option>
-                                <option value="digital">Digital Design</option>
-                                <option value="consultation">Creative Consultation</option>
-                            </select>
+                            <div class="input-wrapper">
+                                <i class="fas fa-briefcase input-icon"></i>
+                                <select id="project" name="project">
+                                    <option value="">Select a service</option>
+                                    <option value="wedding">Wedding Design</option>
+                                    <option value="event">Event Materials</option>
+                                    <option value="video">Video Graphics</option>
+                                    <option value="logo">Logo Design</option>
+                                    <option value="branding">Brand Identity</option>
+                                    <option value="social">Social Media Design</option>
+                                    <option value="print">Print Design</option>
+                                    <option value="digital">Digital Design</option>
+                                    <option value="consultation">Creative Consultation</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="budget">Budget Range</label>
-                            <select id="budget" name="budget">
-                                <option value="">Select budget range</option>
-                                <option value="500-1000">$500 - $1,000</option>
-                                <option value="1000-2500">$1,000 - $2,500</option>
-                                <option value="2500-5000">$2,500 - $5,000</option>
-                                <option value="5000+">$5,000+</option>
-                            </select>
+                            <div class="input-wrapper">
+                                <i class="fas fa-wallet input-icon"></i>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="500-1000">$500 - $1,000</option>
+                                    <option value="1000-2500">$1,000 - $2,500</option>
+                                    <option value="2500-5000">$2,500 - $5,000</option>
+                                    <option value="5000+">$5,000+</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project, goals, and any specific requirements..." required></textarea>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment-alt textarea-icon"></i>
+                                <textarea id="message" name="message" placeholder="Tell me about your project, goals, and any specific requirements..." required></textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
-                            Send Message <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
-                        </button>
+                        <div class="btn-submit-container">
+                            <button type="submit" class="btn-contact-submit">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -2801,29 +2972,61 @@
             observer.observe(el);
         });
 
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
+        // Form submission & WhatsApp Redirection
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const submitBtn = form.querySelector('.btn-primary');
+                const submitBtn = contactForm.querySelector('.btn-contact-submit');
                 const originalText = submitBtn.innerHTML;
                 
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing WhatsApp...';
                 submitBtn.style.pointerEvents = 'none';
                 
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                const projectSelect = document.getElementById('project');
+                const project = projectSelect.value ? projectSelect.options[projectSelect.selectedIndex].text : 'Not Specified';
+                
+                const budgetSelect = document.getElementById('budget');
+                const budget = budgetSelect.value ? budgetSelect.options[budgetSelect.selectedIndex].text : 'Not Specified';
+                
+                const message = document.getElementById('message').value.trim();
+                
+                // Construct beautiful WhatsApp message
+                const text = `*New Project Inquiry* 🌟\n` +
+                             `----------------------------------\n` +
+                             `👤 *Name:* ${name}\n` +
+                             `📧 *Email:* ${email}\n` +
+                             `💼 *Project:* ${project}\n` +
+                             `💰 *Budget:* ${budget}\n` +
+                             `📝 *Message:* ${message}\n` +
+                             `----------------------------------\n` +
+                             `_Sent from Raheem Design Studio Portfolio_`;
+                
+                const whatsappUrl = `https://wa.me/919321926162?text=${encodeURIComponent(text)}`;
+                
+                // Open WhatsApp immediately to bypass pop-up blockers
+                const whatsappWindow = window.open(whatsappUrl, '_blank');
+                if (!whatsappWindow) {
+                    // Fallback to direct redirect if popup is blocked
+                    window.location.href = whatsappUrl;
+                }
+                
                 setTimeout(() => {
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Redirected!';
                     submitBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
                     
                     setTimeout(() => {
                         submitBtn.innerHTML = originalText;
                         submitBtn.style.background = 'linear-gradient(135deg, var(--accent), var(--accent-2))';
                         submitBtn.style.pointerEvents = 'auto';
-                        form.reset();
+                        contactForm.reset();
                     }, 2000);
-                }, 1500);
+                }, 1000);
             });
         }
 
